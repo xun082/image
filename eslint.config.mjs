@@ -9,7 +9,7 @@ import { resolve } from 'path';
 
 export default [
   {
-    ignores: ['node_modules/**', '.next/**', './eslint.config.js'],
+    ignores: ['node_modules/**', '.next/**', './eslint.config.js', 'dist/**'],
   },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
