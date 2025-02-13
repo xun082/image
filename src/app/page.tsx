@@ -45,7 +45,7 @@ const Home = () => {
   const renderGuideLines = () => {
     if (!image || !imageRef.current || !imageLoaded) return null;
 
-    const commonLineStyles = 'bg-blue-500 absolute pointer-events-none';
+    const commonLineStyles = 'bg-blue-500/50 absolute pointer-events-none';
     const imgRect = imageRef.current.getBoundingClientRect();
     const containerRect = imageRef.current.parentElement?.getBoundingClientRect();
 
@@ -64,7 +64,7 @@ const Home = () => {
         {Array.from({ length: Math.max(0, columns - 1) }).map((_, i) => (
           <div
             key={`v-${i}`}
-            className={`${commonLineStyles} top-0 bottom-0 w-[2px]`}
+            className={`${commonLineStyles} top-0 bottom-0 w-[1px] md:w-[2px] backdrop-blur-sm`}
             style={{
               left: `${((i + 1) * 100) / columns}%`,
               transform: 'translateX(-50%)',
@@ -75,7 +75,7 @@ const Home = () => {
         {Array.from({ length: Math.max(0, rows - 1) }).map((_, i) => (
           <div
             key={`h-${i}`}
-            className={`${commonLineStyles} left-0 right-0 h-[2px]`}
+            className={`${commonLineStyles} left-0 right-0 h-[1px] md:h-[2px] backdrop-blur-sm`}
             style={{
               top: `${((i + 1) * 100) / rows}%`,
               transform: 'translateY(-50%)',
@@ -245,10 +245,10 @@ const Home = () => {
             </p>
           </div>
 
-          {/* 图片区域 - 增加下边距 */}
+          {/* 图片区域 - 调整高度和响应式布局 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
-            {/* 上传区域 */}
-            <div className="relative h-[600px] bg-[#1a2234] rounded-xl overflow-hidden">
+            {/* 上传区域 - 调整高度 */}
+            <div className="relative h-[400px] md:h-[500px] lg:h-[600px] bg-[#1a2234] rounded-xl overflow-hidden">
               <input
                 ref={fileInputRef}
                 type="file"
@@ -299,8 +299,8 @@ const Home = () => {
               </label>
             </div>
 
-            {/* 预览区域 */}
-            <div className="h-[600px] bg-[#1a2234] rounded-xl flex items-center justify-center">
+            {/* 预览区域 - 调整高度 */}
+            <div className="h-[400px] md:h-[500px] lg:h-[600px] bg-[#1a2234] rounded-xl flex items-center justify-center">
               {renderPreview()}
             </div>
           </div>

@@ -176,9 +176,9 @@ const TransitionPage = () => {
 
           {/* 图片区域 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
-            {/* 上传区域 */}
+            {/* 上传区域 - 增加高度 */}
             <div
-              className="relative h-[600px] bg-[#1a2234]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition-all group hover:border-blue-500/20"
+              className="relative h-[400px] md:h-[500px] lg:h-[600px] bg-[#1a2234]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition-all group hover:border-blue-500/20"
               onDrop={handleDrop}
               onDragOver={handleDragOver}
             >
@@ -229,7 +229,7 @@ const TransitionPage = () => {
                   <div className="flex flex-col items-center gap-4">
                     <div className="p-6 rounded-full bg-gradient-to-br from-gray-500/10 to-gray-500/5 border border-white/10">
                       <svg
-                        className="w-10 h-10 text-gray-400"
+                        className="w-8 h-8 md:w-10 md:h-10 text-gray-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -242,17 +242,19 @@ const TransitionPage = () => {
                         />
                       </svg>
                     </div>
-                    <div className="text-center">
-                      <p className="text-gray-400 text-lg font-medium mb-1">拖放或点击上传图片</p>
-                      <p className="text-gray-500 text-sm">支持 JPG、PNG、WebP 等格式</p>
+                    <div className="text-center px-4">
+                      <p className="text-gray-400 text-base md:text-lg font-medium mb-1">
+                        拖放或点击上传图片
+                      </p>
+                      <p className="text-gray-500 text-xs md:text-sm">支持 JPG、PNG、WebP 等格式</p>
                     </div>
                   </div>
                 )}
               </label>
             </div>
 
-            {/* 预览区域 */}
-            <div className="h-[600px] bg-[#1a2234]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+            {/* 预览区域 - 增加高度 */}
+            <div className="h-[400px] md:h-[500px] lg:h-[600px] bg-[#1a2234]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
               {outputImage ? (
                 <div className="relative w-full h-full flex items-center justify-center">
                   <img
@@ -270,7 +272,7 @@ const TransitionPage = () => {
                 <div className="w-full h-full flex flex-col items-center justify-center">
                   <div className="p-6 rounded-full bg-gradient-to-br from-gray-500/10 to-gray-500/5 border border-white/10 mb-4">
                     <svg
-                      className="w-10 h-10 text-gray-400"
+                      className="w-8 h-8 md:w-10 md:h-10 text-gray-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -289,7 +291,7 @@ const TransitionPage = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-400 text-lg font-medium">
+                  <p className="text-gray-400 text-base md:text-lg font-medium">
                     {isProcessing ? '处理中...' : '转换后的图片预览'}
                   </p>
                 </div>
